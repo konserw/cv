@@ -20,7 +20,6 @@
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{666666}
-%\definecolor{lightgray}{HTML}{999999}
 
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
@@ -49,16 +48,12 @@
 %%%%%%%%%
 
 \RequirePackage[quiet]{fontspec}
-%\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
 \newfontfamily\bodyfont[Ligatures={Common,TeX}]{Source Sans Pro}
 \newfontfamily\thinfont[Ligatures={Common,TeX}]{Source Sans Pro ExtraLight}
 \newfontfamily\headingfont[Ligatures={Common,TeX}]{Source Sans Pro Black}
-%\defaultfontfeatures{Mapping=tex-text}
 \defaultfontfeatures{Ligatures={Common,TeX}}
 \setmainfont[Ligatures={Common,TeX}, Color=textcolor]{Source Sans Pro Light}
-%\setmainfont[Mapping=tex-text, Color=textcolor]{Source Sans Pro Light}
-%\setmathfont{XITS Math}
 
 %%%%%%%%%%
 % Header %
@@ -175,6 +170,7 @@
 %%%%%%%%%%%%%%
 % klauzula %
 %%%%%%%%%%%%%%
+
 \RequirePackage[counterclockwise]{rotating}
 \newenvironment{klauzula}{%
  \begin{textblock*}{4cm}(1.5cm, .25\textheight)
@@ -195,5 +191,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.25cm,bottom=2.5cm,nohead,foot=7.19pt]{geometry}
+\RequirePackage[left=6.1cm,top=2cm,right=1.25cm,bottom=2.5cm,nohead,nofoot]{geometry}
 \RequirePackage[hidelinks]{hyperref}
