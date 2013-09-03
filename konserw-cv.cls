@@ -1,4 +1,4 @@
-\ProvidesClass{friggeri-cv}[2013/09/03 CV class]
+\ProvidesClass{konserw-cv}[2013/09/03 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{print}{\def\@cv@print{}}
