@@ -129,18 +129,21 @@
 %%%%%%%%%%%%%%%%%%%%
 
 \setlength{\tabcolsep}{0pt}
+
 \newenvironment{entrylist}{%
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
   \end{tabular*}
 }
+
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
+
 \newcommand{\entry}[4]{%
   #1&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{\parsep}%
+    #4\vspace{2\parsep}%
   }\\}
 
 
@@ -156,7 +159,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{4}(1.5, 4.33)
+  \begin{textblock}{4}(1.5, 4.5)
   \begin{flushright}
   \obeycr
 }{%
@@ -166,23 +169,39 @@
   \let\section\oldsection
 }
 
-
 %%%%%%%%%%%%%%
 % klauzula %
 %%%%%%%%%%%%%%
 
 \RequirePackage[counterclockwise]{rotating}
+
 \newenvironment{klauzula}{%
- \begin{textblock*}{4cm}(1.5cm, .25\textheight)
-  \begin{sideways}
-   \begin{minipage}{.5\textheight}  
+ \begin{textblock*}{3cm}(1.5cm, .77\textheight)
+  \begin{flushright}
+   \begin{sideways}
+    \begin{minipage}{.41\textheight}  
+     \begin{center}
+%     \obeycr
+}{%
+%     \restorecr
+     \end{center}
+    \end{minipage}
+   \end{sideways}  
+  \end{flushright}
+ \end{textblock*}
+}
+
+\newenvironment{klauzula_dol}{%
+ \begin{textblock*}{.95\paperwidth}(0cm, .95\paperheight)
+%  \begin{sideways}
+%   \begin{minipage}{.5\textheight}  
     \begin{center}
      \obeycr
 }{%
      \restorecr
     \end{center}
-   \end{minipage}
-  \end{sideways}  
+%   \end{minipage}
+%  \end{sideways}  
  \end{textblock*}
 }
 
