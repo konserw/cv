@@ -69,7 +69,7 @@
 
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=3cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
@@ -79,8 +79,8 @@
       \thinfont #3%
     };
   \end{tikzpicture}
-  \vspace{2.5cm}
-  \vspace{-2\parskip}
+  \vspace{1cm}
+%  \vspace{-2\parskip}
 }
 
 
@@ -131,7 +131,7 @@
 \setlength{\tabcolsep}{0pt}
 
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l  l}
 }{%
   \end{tabular*}
 }
@@ -142,10 +142,26 @@
   #1&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{2\parsep}%
-  }\\}
+    {\footnotesize #3 }  \\ %
+%		\addfontfeature{Color=lightgray} #3 }\\%
+    #4\vspace{\parsep}%
+  }%
+\\}
 
+
+\newenvironment{skillslist}{%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r  l}
+}{%
+  \end{tabular*}
+}
+
+\newcommand{\skill}[1]{%
+ %\parbox{0cm}{\raggedleft \(\bullet\) } 
+\parbox{2cm}{ \raggedleft \(\bullet\)  } & \parbox[t]{11.8cm}{%
+    \textbf{#1} %
+    \vspace{\parsep}%
+  }%
+\\}
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -159,7 +175,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{4}(1.5, 4.5)
+  \begin{textblock}{3.75}(1.5, 3.3)
   \begin{flushright}
   \obeycr
 }{%
@@ -175,7 +191,7 @@
 
 \RequirePackage[counterclockwise]{rotating}
 
-\newenvironment{klauzula}{%
+\newenvironment{klauzula_bok}{%
  \begin{textblock*}{3cm}(1.5cm, .77\textheight)
   \begin{flushright}
    \begin{sideways}
@@ -191,24 +207,22 @@
  \end{textblock*}
 }
 
-\newenvironment{klauzula_dol}{%
- \begin{textblock*}{.95\paperwidth}(0cm, .95\paperheight)
-%  \begin{sideways}
-%   \begin{minipage}{.5\textheight}  
+\newenvironment{klauzula}{%
+ \begin{textblock*}{\paperwidth}(1cm, .94\paperheight)
+   \begin{minipage}{.9\textwidth}  
     \begin{center}
-     \obeycr
+	\footnotesize
+   %  \obeycr
 }{%
-     \restorecr
+   %  \restorecr
     \end{center}
-%   \end{minipage}
-%  \end{sideways}  
+   \end{minipage}
  \end{textblock*}
 }
-
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.25cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6.1cm,top=1.75cm,right=1.25cm,bottom=1.5cm,nohead,nofoot]{geometry}
 \RequirePackage[hidelinks]{hyperref}
