@@ -2,6 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{print}{\def\@cv@print{}}
+\DeclareOption{print}{\def\@cv@half{}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
 }
@@ -37,8 +38,13 @@
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{gray}
-  \colorlet{header}{white}
+  \ifdefined\@cv@half
+    \colorlet{fillheader}{white}
+    \colorlet{header}{gray}
+  \else
+    \colorlet{fillheader}{gray}
+    \colorlet{header}{white}
+  \fi
 \fi
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
@@ -131,7 +137,7 @@
 \setlength{\tabcolsep}{0pt}
 
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l  l}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{.5\fill}} l  l}
 }{%
   \end{tabular*}
 }
@@ -175,7 +181,8 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.75}(1.5, 3.3)
+  \begin{textblock}{4.5}(1, 3.3)
+%  \begin{textblock}{3.75}(1.5, 3.3)
   \begin{flushright}
   \obeycr
 }{%
