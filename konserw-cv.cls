@@ -137,7 +137,7 @@
 \setlength{\tabcolsep}{0pt}
 
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{.5\fill}} l  l}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
   \end{tabular*}
 }
@@ -145,7 +145,7 @@
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 
 \newcommand{\entry}[4]{%
-  #1&~\parbox[t]{11.8cm}{%
+  \parbox[t]{3cm}{#1}&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize #3 }  \\ %
