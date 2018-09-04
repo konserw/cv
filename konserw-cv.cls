@@ -227,6 +227,16 @@
  \end{textblock*}
 }
 
+\newenvironment{klauzula2}{%
+ \begin{figure}[!b]
+   \begin{minipage}{.9\linewidth}  
+	\footnotesize
+     \obeycr
+}{%
+    \restorecr
+   \end{minipage}
+  \end{figure}
+}
 %%%%%%%%%%%%%%%%
 % Other tweaks %
 %%%%%%%%%%%%%%%%
